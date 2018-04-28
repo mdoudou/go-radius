@@ -1,0 +1,57 @@
+2018/04/28 14:12:57 main.go:68: Listening UDP on 0.0.0.0:1813
+2018/04/28 14:12:57 main.go:61: Listening UDP on 0.0.0.0:1812
+2018/04/28 14:13:51 main.go:27: rh.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F09255255000000000dfaba8000004
+2018/04/28 14:13:51 main.go:44: CGC-17F09255255000000000dfaba8000004 Start
+2018/04/28 14:14:33 main.go:44: CGC-17F09255255000000000dfaba8000004 Stop
+2018/04/28 14:14:37 main.go:78: Stopping server on port UDP 1812
+2018/04/28 14:14:37 main.go:81: Stopping server on port UDP 1813
+2018/04/28 14:23:59 radius.go:31: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:23:59 radius.go:24: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:24:13 radius.go:62: rh.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F092552550000000006e41ae000002
+2018/04/28 14:24:13 radius.go:79: CGC-17F092552550000000006e41ae000002 Start
+2018/04/28 14:24:14 radius.go:79: CGC-17F092552550000000006e41ae000002 Stop
+2018/04/28 14:24:25 radius.go:41: Stopping authentication server 
+2018/04/28 14:24:25 radius.go:44: Stopping accounting server
+2018/04/28 14:27:01 radius.go:31: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:27:01 radius.go:24: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:27:16 radius.go:41: Stopping authentication server 
+2018/04/28 14:27:16 radius.go:44: Stopping accounting server
+2018/04/28 14:27:43 radius.go:31: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:27:43 radius.go:24: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:28:05 radius.go:41: Stopping authentication server 
+2018/04/28 14:28:05 radius.go:44: Stopping accounting server
+2018/04/28 14:31:22 radius.go:25: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:31:22 radius.go:32: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:32:53 radius.go:63: rh.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F0925525500000000029cd57000012
+2018/04/28 14:32:53 radius.go:80: CGC-17F0925525500000000029cd57000012 Start
+2018/04/28 14:33:09 radius.go:80: CGC-17F0925525500000000029cd57000012 Stop
+2018/04/28 14:34:20 radius.go:42: Stopping authentication server 
+2018/04/28 14:34:20 radius.go:45: Stopping accounting server
+2018/04/28 14:45:08 radius.go:25: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:45:08 radius.go:32: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:45:15 radius.go:42: Stopping authentication server 
+2018/04/28 14:45:15 radius.go:45: Stopping accounting server
+2018/04/28 14:47:59 radius.go:25: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:47:59 http.go:64: https listening :1811
+2018/04/28 14:47:59 radius.go:32: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:48:14 radius.go:42: Stopping authentication server 
+2018/04/28 14:48:14 radius.go:45: Stopping accounting server
+2018/04/28 14:48:20 http.go:64: https listening :1811
+2018/04/28 14:48:20 radius.go:25: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:48:20 radius.go:32: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:48:24 radius.go:42: Stopping authentication server 
+2018/04/28 14:48:24 radius.go:45: Stopping accounting server
+2018/04/28 14:57:27 http.go:64: https listening :1811
+2018/04/28 14:57:27 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 14:57:27 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 14:57:36 radius.go:57: rh.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F092552550000000000d1b28000010
+2018/04/28 14:57:36 radius.go:74: CGC-17F092552550000000000d1b28000010 Start
+2018/04/28 14:57:48 radius.go:74: CGC-17F092552550000000000d1b28000010 Stop
+2018/04/28 14:57:56 radius.go:57: rh.wang 123 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F09255255000000000ad90c1000003
+2018/04/28 14:58:23 radius.go:57: jz.lin network@77314 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F0925525500000000011f375000014
+2018/04/28 14:58:39 radius.go:57: jzh.lin viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F09255255000000000b4fa62000006
+2018/04/28 14:59:07 radius.go:57: jzh.lin network@77314 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F0925525500000000054e5b4000009
+2018/04/28 14:59:07 radius.go:74: CGC-17F0925525500000000054e5b4000009 Start
+2018/04/28 14:59:10 radius.go:74: CGC-17F0925525500000000054e5b4000009 Stop
+2018/04/28 15:15:16 radius.go:43: Stopping authentication server 
+2018/04/28 15:15:16 radius.go:46: Stopping accounting server
