@@ -51,10 +51,17 @@ func StartRadius() {
 }
 
 func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
+
 	npac := request.Reply()
+	userName := request.GetUsername()
+	password := request.GetPassword()
+	nasIPAddress := request.GetNasIpAddress().String()
+	framedIPAddress := request.GetFramedIPAddress().String()
+	nasIdentifier := request.GetNASIdentifier()
+	acctSessionId := request.GetAcctSessionId()
+
 	switch request.Code {
 	case radius.AccessRequest:
-		log.Println(request.GetUsername(), request.GetPassword(), request.GetNasIpAddress(), request.GetNASIdentifier(), request.GetFramedIPAddress(), request.GetAcctSessionId())
 		if db.CheckUserPassword(db.RadiusDb, request.GetUsername(), request.GetPassword()) {
 			npac.Code = radius.AccessAccept
 			// add Vendor-specific attribute - Vendor Huawei (code 2011) Attribute Huawei-Exec-Privilege (code 29)
@@ -65,14 +72,24 @@ func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
 
 			//log.Println(request.String())
 		} else {
+			//log.Println(userName, password, nasIPAddress, nasIdentifier, framedIPAddress)
+
+			db.LoginFail(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress)
 			npac.Code = radius.AccessReject
 			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Your login is illegal - by ISC Team")})
 		}
 	case radius.AccountingRequest:
-		log.Println(request.GetAcctSessionId(), request.GetAcctStatusType())
+		if request.GetAcctStatusType().String() == "Start" {
+			db.Login(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
+			log.Println(userName, nasIPAddress, "Login")
+		}
+		if request.GetAcctStatusType().String() == "Stop" {
+			db.Logout(db.RadiusDb, framedIPAddress, acctSessionId)
+			log.Println(userName, nasIPAddress, "Logout")
+		}
 		npac.Code = radius.AccountingResponse
 	default:
-		npac.Code = radius.AccessAccept
+		npac.Code = radius.AccessReject
 	}
 	return npac
 }

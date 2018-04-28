@@ -55,3 +55,93 @@
 2018/04/28 14:59:10 radius.go:74: CGC-17F0925525500000000054e5b4000009 Stop
 2018/04/28 15:15:16 radius.go:43: Stopping authentication server 
 2018/04/28 15:15:16 radius.go:46: Stopping accounting server
+2018/04/28 16:12:17 http.go:64: https listening :1811
+2018/04/28 16:12:17 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 16:12:17 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 16:13:00 radius.go:57: rh.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F092552550000000007531da000013
+2018/04/28 16:13:00 radius.go:72: CGC-17F092552550000000007531da000013 Start
+2018/04/28 16:13:24 radius.go:72: CGC-17F092552550000000007531da000013 Stop
+2018/04/28 16:14:21 radius.go:57: rh.wang viproot 172.18.200.14 000fe27261a4 172.25.1.29 
+2018/04/28 16:14:21 radius.go:72: 111803281614f Start
+2018/04/28 16:14:37 radius.go:72: 111803281614f Stop
+2018/04/28 16:14:45 radius.go:57: rh.wang  172.18.200.14 000fe27261a4 172.25.1.29 
+2018/04/28 16:33:17 radius.go:43: Stopping authentication server 
+2018/04/28 16:33:17 radius.go:46: Stopping accounting server
+2018/04/28 16:37:24 http.go:64: https listening :1811
+2018/04/28 16:37:24 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 16:37:24 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 16:37:40 radius.go:63: rh.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F092552550000000003eacf5000015
+2018/04/28 16:37:40 radius.go:81: rh.wang 172.25.0.171 Login
+2018/04/28 16:38:16 db.go:102: Error 1054: Unknown column 'framedIPAddress' in 'where clause'
+2018/04/28 16:40:37 http.go:64: https listening :1811
+2018/04/28 16:40:37 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 16:40:37 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 16:41:03 radius.go:68: rh.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F0925525500000000010a07b000016
+2018/04/28 16:41:03 radius.go:86: rh.wang 172.25.0.171 Login
+2018/04/28 16:41:13 radius.go:90: rh.wang 172.25.0.171 Logout
+2018/04/28 16:42:35 radius.go:68: rh.wang 123 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F0925525500000000032bf40000001
+2018/04/28 16:42:35 db.go:102: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2018/04/28 16:42:35 radius.go:56: runtime error: invalid memory address or nil pointer dereference
+2018/04/28 16:46:19 http.go:64: https listening :1811
+2018/04/28 16:46:19 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 16:46:19 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 16:46:34 radius.go:68: rh.wang 1 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F0925525500000000033684a000007
+2018/04/28 16:46:34 db.go:102: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2018/04/28 16:46:34 radius.go:56: runtime error: invalid memory address or nil pointer dereference
+2018/04/28 16:48:24 http.go:64: https listening :1811
+2018/04/28 16:48:24 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 16:48:24 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 16:48:33 radius.go:66: rh.wang 1 172.25.0.171 CGC-17F-0.171 172.25.1.29 CGC-17F09255255000000000d934dc000004
+2018/04/28 16:48:33 db.go:102: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2018/04/28 16:48:33 radius.go:56: runtime error: invalid memory address or nil pointer dereference
+2018/04/28 16:49:57 http.go:64: https listening :1811
+2018/04/28 16:49:57 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 16:49:57 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 16:50:09 radius.go:79: admin 123 172.25.0.171 CGC-17F-0.171 172.25.1.29
+2018/04/28 16:50:09 db.go:102: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2018/04/28 16:50:09 radius.go:56: runtime error: invalid memory address or nil pointer dereference
+2018/04/28 16:59:32 http.go:64: https listening :1811
+2018/04/28 16:59:32 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 16:59:32 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 16:59:38 radius.go:79: rh.wang 1 172.25.0.171 CGC-17F-0.171 172.25.1.29
+2018/04/28 16:59:38 db.go:102: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2018/04/28 16:59:38 radius.go:56: runtime error: invalid memory address or nil pointer dereference
+2018/04/28 17:03:20 http.go:64: https listening :1811
+2018/04/28 17:03:20 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 17:03:20 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 17:03:27 radius.go:79: RH.WANG 123 172.25.0.171 CGC-17F-0.171 172.25.1.29
+2018/04/28 17:03:27 db.go:102: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '' at line 1
+2018/04/28 17:03:27 radius.go:56: runtime error: invalid memory address or nil pointer dereference
+2018/04/28 17:06:47 http.go:64: https listening :1811
+2018/04/28 17:06:47 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 17:06:47 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 17:07:16 radius.go:75: rh.wang 123 172.25.0.171 CGC-17F-0.171 172.25.1.29
+2018/04/28 17:08:01 radius.go:75: test 123 172.25.0.171 CGC-17F-0.171 172.25.1.29
+2018/04/28 17:08:20 radius.go:43: Stopping authentication server 
+2018/04/28 17:08:20 radius.go:46: Stopping accounting server
+2018/04/28 17:08:22 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 17:08:22 http.go:64: https listening :1811
+2018/04/28 17:08:22 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 17:08:30 radius.go:75: test  172.25.0.171 CGC-17F-0.171 172.25.1.29
+2018/04/28 17:08:30 db.go:117: Error 1064: You have an error in your SQL syntax; check the manual that corresponds to your MySQL server version for the right syntax to use near '?,?,'Access-Reject',now(),?,?,?)' at line 1
+2018/04/28 17:08:30 db.go:98: runtime error: invalid memory address or nil pointer dereference
+2018/04/28 17:08:43 radius.go:43: Stopping authentication server 
+2018/04/28 17:08:43 radius.go:46: Stopping accounting server
+2018/04/28 17:09:37 http.go:64: https listening :1811
+2018/04/28 17:09:37 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 17:09:37 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 17:09:49 radius.go:84: rh.wang 172.25.0.171 Login
+2018/04/28 17:10:12 radius.go:88: rh.wang 172.25.0.171 Logout
+2018/04/28 17:14:08 radius.go:43: Stopping authentication server 
+2018/04/28 17:14:08 radius.go:46: Stopping accounting server
+2018/04/28 17:14:10 http.go:64: https listening :1811
+2018/04/28 17:14:10 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 17:14:10 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 17:14:20 radius.go:75: RH.wang viproot 172.25.0.171 CGC-17F-0.171 172.25.1.29
+2018/04/28 17:21:28 radius.go:43: Stopping authentication server 
+2018/04/28 17:21:28 radius.go:46: Stopping accounting server
+2018/04/28 17:21:30 http.go:64: https listening :1811
+2018/04/28 17:21:30 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/04/28 17:21:30 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/04/28 17:21:33 radius.go:43: Stopping authentication server 
+2018/04/28 17:21:33 radius.go:46: Stopping accounting server
