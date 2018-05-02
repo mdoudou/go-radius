@@ -46,7 +46,7 @@ func StartRadius() {
 		log.Println("Stopping accounting server")
 
 	case err := <-errChan:
-		log.Println("[ERR] %v", err.Error())
+		log.Println(err.Error())
 	}
 }
 
@@ -68,19 +68,23 @@ func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
 			npac.AddVSA(radius.VSA{Vendor: 2011, Type: 29, Value: intToBytes(3)})
 			npac.AddAVP(radius.AVP{Type: radius.ServiceType, Value: intToBytes(1)})
 			npac.AddAVP(radius.AVP{Type: radius.LoginService, Value: intToBytes(0)})
-			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Welcome home -  by ISC Team")})
+			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication success - by ISC Team")})
+			if acctSessionId != "" {
+				db.AuthSuccess(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
+			} else {
+				log.Println(nasIPAddress, "acctSessionId empty")
+			}
+			log.Println(userName, nasIPAddress, "auth success")
 
-			//log.Println(request.String())
 		} else {
-			//log.Println(userName, password, nasIPAddress, nasIdentifier, framedIPAddress)
-
-			db.LoginFail(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress)
+			db.AuthFail(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
 			npac.Code = radius.AccessReject
-			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Your login is illegal - by ISC Team")})
+			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication failed - by ISC Team")})
+			log.Println(userName, nasIPAddress, password, "auth failed")
 		}
 	case radius.AccountingRequest:
 		if request.GetAcctStatusType().String() == "Start" {
-			db.Login(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
+			db.Login(db.RadiusDb, userName, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
 			log.Println(userName, nasIPAddress, "Login")
 		}
 		if request.GetAcctStatusType().String() == "Stop" {

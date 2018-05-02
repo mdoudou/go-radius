@@ -2,9 +2,8 @@ package http
 
 import (
 	"encoding/json"
-	"log"
 	"github.com/hel2o/go-radius/g"
-
+	"log"
 	"net/http"
 	_ "net/http/pprof"
 )

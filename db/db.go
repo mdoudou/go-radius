@@ -5,6 +5,8 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 	"github.com/hel2o/go-radius/g"
 	"log"
+	"strconv"
+	"time"
 )
 
 var RadiusDb, FireSystemDb *sql.DB
@@ -54,8 +56,8 @@ func CheckUserPassword(db *sql.DB, username, password string) bool {
 	return false
 }
 
-//记录用户登录成功
-func Login(db *sql.DB, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId string) (int64, error) {
+//记录用户认证成功
+func AuthSuccess(db *sql.DB, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId string) (int64, error) {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Println(err)
@@ -73,6 +75,38 @@ func Login(db *sql.DB, userName, password, nasIPAddress, nasIdentifier, framedIP
 	rowsAffected, err := ret.RowsAffected()
 	HandleErr(err)
 	return rowsAffected, err
+}
+
+//记录用户登录成功
+func Login(db *sql.DB, userName, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId string) (int64, error) {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println(err)
+		}
+	}()
+
+	var count int64
+	q := "SELECT COUNT(*) FROM radpostauth WHERE acctsessionid = ?"
+	err := db.QueryRow(q, acctSessionId).Scan(&count)
+	if err != nil {
+		log.Println(err)
+		return -1, err
+	}
+	if count == 0 {
+		var w = "INSERT INTO `radpostauth` (username, reply, authdate, nasipaddress, clientipaddress, nasidentifier, acctstarttime, acctsessionid) VALUES (?,'Access-Accept',now(),?,?,?,now(),?)"
+		stmt, err := db.Prepare(w)
+		defer stmt.Close()
+		HandleErr(err)
+		ret, err := stmt.Exec(userName, nasIPAddress, framedIPAddress, nasIdentifier, acctSessionId)
+		if err != nil {
+			log.Println(err)
+			return 0, err
+		}
+		rowsAffected, err := ret.RowsAffected()
+		HandleErr(err)
+		return rowsAffected, err
+	}
+	return 0, err
 }
 
 //记录用户退出登录
@@ -97,17 +131,20 @@ func Logout(db *sql.DB, framedIPAddress, acctSessionId string) (int64, error) {
 }
 
 //记录用户登录失败
-func LoginFail(db *sql.DB, userName, password, nasIPAddress, nasIdentifier, framedIPAddress string) (int64, error) {
+func AuthFail(db *sql.DB, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId string) (int64, error) {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Println(err)
 		}
 	}()
-	var w = "INSERT INTO `radpostauth` (username, pass, reply, authdate, nasipaddress, clientipaddress, nasidentifier) VALUES (?,?,'Access-Reject',now(),?,?,?)"
+	var w = "INSERT INTO `radpostauth` (username, pass, reply, authdate, nasipaddress, clientipaddress, nasidentifier, acctsessionid) VALUES (?,?,'Access-Reject',now(),?,?,?,?)"
 	stmt, err := db.Prepare(w)
 	defer stmt.Close()
 	HandleErr(err)
-	ret, err := stmt.Exec(userName, password, nasIPAddress, framedIPAddress, nasIdentifier)
+	if acctSessionId == "" {
+		acctSessionId = strconv.FormatInt(time.Now().UnixNano(), 10)
+	}
+	ret, err := stmt.Exec(userName, password, nasIPAddress, framedIPAddress, nasIdentifier, acctSessionId)
 	if err != nil {
 		log.Println(err)
 		return 0, err

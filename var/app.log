@@ -145,3 +145,164 @@
 2018/04/28 17:21:30 radius.go:26: Listening UDP on 0.0.0.0 :1812
 2018/04/28 17:21:33 radius.go:43: Stopping authentication server 
 2018/04/28 17:21:33 radius.go:46: Stopping accounting server
+2018/05/02 10:46:59 http.go:64: https listening :1811
+2018/05/02 10:46:59 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 10:46:59 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 10:47:37 radius.go:80: rh.wang 172.25.0.171 Login
+2018/05/02 10:47:45 radius.go:84: rh.wang 172.25.0.171 Logout
+2018/05/02 10:53:11 radius.go:80: jzh.lin 172.25.0.171 Login
+2018/05/02 10:54:54 radius.go:84: jzh.lin 172.25.0.171 Logout
+2018/05/02 11:02:49 radius.go:80: jzh.lin 172.25.0.171 Login
+2018/05/02 11:07:47 radius.go:84: jzh.lin 172.25.0.171 Logout
+2018/05/02 11:09:28 radius.go:43: Stopping authentication server 
+2018/05/02 11:09:28 radius.go:46: Stopping accounting server
+2018/05/02 11:09:31 http.go:64: https listening :1811
+2018/05/02 11:09:31 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 11:09:31 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 11:09:44 radius.go:72: rh.wang 172.25.0.171 auth success
+2018/05/02 11:09:44 radius.go:82: rh.wang 172.25.0.171 Login
+2018/05/02 11:10:45 radius.go:86: rh.wang 172.25.0.171 Logout
+2018/05/02 11:11:07 radius.go:43: Stopping authentication server 
+2018/05/02 11:11:07 radius.go:46: Stopping accounting server
+2018/05/02 11:11:20.786251 http.go:64: https listening :1811
+2018/05/02 11:11:20.787386 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 11:11:20.787190 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 11:11:33.481636 radius.go:72: rh.wang 172.25.0.171 auth success
+2018/05/02 11:11:33.499639 radius.go:82: rh.wang 172.25.0.171 Login
+2018/05/02 11:12:34.072236 radius.go:86: rh.wang 172.25.0.171 Logout
+2018/05/02 11:14:32.263924 radius.go:72: rh.wang 172.25.0.171 auth success
+2018/05/02 11:14:32.276325 radius.go:82: rh.wang 172.25.0.171 Login
+2018/05/02 11:14:51.873631 radius.go:86: rh.wang 172.25.0.171 Logout
+2018/05/02 11:19:19.606157 radius.go:72: jzh.lin 172.25.0.171 auth success
+2018/05/02 11:19:19.623353 radius.go:82: jzh.lin 172.25.0.171 Login
+2018/05/02 11:21:47.783084 radius.go:86: jzh.lin 172.25.0.171 Logout
+2018/05/02 11:22:50.308379 radius.go:72: jzh.lin 172.25.0.171 auth success
+2018/05/02 11:22:50.320966 radius.go:82: jzh.lin 172.25.0.171 Login
+2018/05/02 11:23:10.029723 radius.go:86: jzh.lin 172.25.0.171 Logout
+2018/05/02 13:42:57.394486 radius.go:43: Stopping authentication server 
+2018/05/02 13:42:57.394573 radius.go:46: Stopping accounting server
+2018/05/02 13:43:13.609242 http.go:64: https listening :1811
+2018/05/02 13:43:13.612018 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 13:43:13.612145 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 13:43:30.870504 radius.go:75: rh.wang 172.25.0.171 auth success
+2018/05/02 13:43:30.880758 radius.go:85: rh.wang 172.25.0.171 Login
+2018/05/02 13:43:56.024719 radius.go:89: rh.wang 172.25.0.171 Logout
+2018/05/02 13:45:02.936719 radius.go:43: Stopping authentication server 
+2018/05/02 13:45:02.936788 radius.go:46: Stopping accounting server
+2018/05/02 13:45:04.511129 http.go:64: https listening :1811
+2018/05/02 13:45:04.511516 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 13:45:04.511372 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 13:45:32.744376 radius.go:74: rh.wang viproot
+2018/05/02 13:45:32.744445 radius.go:76: rh.wang 172.25.0.171 auth success
+2018/05/02 13:45:32.759777 radius.go:86: rh.wang 172.25.0.171 Login
+2018/05/02 13:46:03.677904 radius.go:90: rh.wang 172.25.0.171 Logout
+2018/05/02 13:47:38.842875 radius.go:43: Stopping authentication server 
+2018/05/02 13:47:38.842954 radius.go:46: Stopping accounting server
+2018/05/02 13:47:40.639127 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 13:47:40.639156 http.go:64: https listening :1811
+2018/05/02 13:47:40.640009 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 13:47:54.041747 radius.go:65: rh.wang viproot
+2018/05/02 13:47:54.046167 radius.go:76: rh.wang 172.25.0.171 auth success
+2018/05/02 13:47:54.062746 radius.go:86: rh.wang 172.25.0.171 Login
+2018/05/02 13:48:58.266752 radius.go:43: Stopping authentication server 
+2018/05/02 13:48:58.266845 radius.go:46: Stopping accounting server
+2018/05/02 13:48:59.762021 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 13:48:59.762012 http.go:64: https listening :1811
+2018/05/02 13:48:59.762947 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 13:49:05.763420 radius.go:90: rh.wang 172.25.0.171 Logout
+2018/05/02 13:49:26.794074 radius.go:65: rh.wang  CGC-17F09255255000000000d79e33000011
+2018/05/02 13:49:26.799012 db.go:133: Error 1062: Duplicate entry '' for key 'acctsessionid'
+2018/05/02 13:52:22.531842 radius.go:43: Stopping authentication server 
+2018/05/02 13:52:22.531927 radius.go:46: Stopping accounting server
+2018/05/02 13:52:24.485930 http.go:64: https listening :1811
+2018/05/02 13:52:24.486053 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 13:52:24.486161 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 13:52:33.099150 radius.go:65: rh.wang 123 CGC-17F092552550000000009bc659000013
+2018/05/02 13:54:17.759262 radius.go:65: rh.wang 13244 CGC-17F09255255000000000f32f8c000015
+2018/05/02 13:56:15.346881 radius.go:43: Stopping authentication server 
+2018/05/02 13:56:15.346988 radius.go:46: Stopping accounting server
+2018/05/02 13:56:17.264493 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 13:56:17.264490 http.go:64: https listening :1811
+2018/05/02 13:56:17.264932 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 13:56:45.282544 radius.go:65: rh.wang 123 CGC-17F09255255000000000024dfb000016
+2018/05/02 13:59:43.526929 radius.go:43: Stopping authentication server 
+2018/05/02 13:59:43.527012 radius.go:46: Stopping accounting server
+2018/05/02 13:59:45.597508 http.go:64: https listening :1811
+2018/05/02 13:59:45.598049 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 13:59:45.598322 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 13:59:59.189973 radius.go:65: rh.wang viproot CGC-17F09255255000000000a7d3d8000001
+2018/05/02 13:59:59.203554 radius.go:76: rh.wang 172.25.0.171 auth success
+2018/05/02 13:59:59.215801 radius.go:86: rh.wang 172.25.0.171 Login
+2018/05/02 14:00:27.005012 radius.go:90: rh.wang 172.25.0.171 Logout
+2018/05/02 14:00:35.854274 radius.go:65: rh.wang 123456 CGC-17F09255255000000000c3b61a000007
+2018/05/02 14:01:40.443732 radius.go:43: Stopping authentication server 
+2018/05/02 14:01:40.443836 radius.go:46: Stopping accounting server
+2018/05/02 14:01:43.166664 http.go:64: https listening :1811
+2018/05/02 14:01:43.167038 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 14:01:43.167371 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 14:01:50.352719 radius.go:65: rh.wang 123 CGC-17F09255255000000000d19676000004
+2018/05/02 14:02:04.476182 radius.go:65: rh.wang 1234 CGC-17F09255255000000000ed98e8000005
+2018/05/02 14:10:40.838807 radius.go:43: Stopping authentication server 
+2018/05/02 14:10:40.838908 radius.go:46: Stopping accounting server
+2018/05/02 14:13:20.605801 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 14:13:20.605546 http.go:64: https listening :1811
+2018/05/02 14:13:20.606026 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 14:13:31.044160 radius.go:65: rh.wang viproot CGC-17F09255255000000000216c4a000002
+2018/05/02 14:13:31.049752 radius.go:76: rh.wang 172.25.0.171 auth success
+2018/05/02 14:13:31.058690 radius.go:86: rh.wang 172.25.0.171 Login
+2018/05/02 14:13:32.492651 radius.go:90: rh.wang 172.25.0.171 Logout
+2018/05/02 14:13:49.694167 radius.go:65: rh.wang 1 CGC-17F092552550000000003e2c66000012
+2018/05/02 14:14:15.731953 radius.go:65: rh.wang 12 CGC-17F09255255000000000520d17000010
+2018/05/02 14:21:27.442790 radius.go:43: Stopping authentication server 
+2018/05/02 14:21:27.442891 radius.go:46: Stopping accounting server
+2018/05/02 14:21:29.010377 http.go:64: https listening :1811
+2018/05/02 14:21:29.011640 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 14:21:29.012164 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 14:21:59.648242 radius.go:65: rh.wang viproot CGC-17F09255255000000000a64254000003
+2018/05/02 14:21:59.660849 radius.go:75: 当前sessionid不为空 viproot
+2018/05/02 14:21:59.660880 radius.go:77: rh.wang 172.25.0.171 auth success
+2018/05/02 14:21:59.671170 radius.go:87: rh.wang 172.25.0.171 Login
+2018/05/02 14:22:21.492808 radius.go:91: rh.wang 172.25.0.171 Logout
+2018/05/02 14:34:14.759909 radius.go:43: Stopping authentication server 
+2018/05/02 14:34:14.759987 radius.go:46: Stopping accounting server
+2018/05/02 14:34:16.731491 http.go:64: https listening :1811
+2018/05/02 14:34:16.732572 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 14:34:16.733225 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 14:34:25.440140 radius.go:65: rh.wang viproot CGC-17F09255255000000000569c06000014
+2018/05/02 14:34:25.452625 radius.go:75: 当前sessionid不为空 viproot
+2018/05/02 14:34:25.452664 radius.go:77: rh.wang 172.25.0.171 auth success
+2018/05/02 14:34:25.462621 radius.go:87: rh.wang 172.25.0.171 Login
+2018/05/02 14:34:43.042117 radius.go:91: rh.wang 172.25.0.171 Logout
+2018/05/02 15:01:32.472764 radius.go:43: Stopping authentication server 
+2018/05/02 15:01:32.472852 radius.go:46: Stopping accounting server
+2018/05/02 15:02:52.947679 http.go:64: https listening :1811
+2018/05/02 15:02:52.948467 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 15:02:52.948771 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 15:03:02.179486 radius.go:65: rh.wang viproot CGC-17F092552550000000002212e1000006
+2018/05/02 15:03:02.186381 radius.go:75: 当前sessionid不为空 viproot
+2018/05/02 15:03:02.186428 radius.go:77: rh.wang 172.25.0.171 auth success
+2018/05/02 15:03:02.221470 radius.go:87: rh.wang 172.25.0.171 Login
+2018/05/02 15:03:04.186355 radius.go:91: rh.wang 172.25.0.171 Logout
+2018/05/02 15:03:28.954759 radius.go:65: rh.wang 123 CGC-17F09255255000000000490c2a000009
+2018/05/02 15:03:42.725060 radius.go:65: rh.wang viproot CGC-17F092552550000000003dbb85000008
+2018/05/02 15:03:42.729082 radius.go:75: 当前sessionid不为空 viproot
+2018/05/02 15:03:42.729122 radius.go:77: rh.wang 172.25.0.171 auth success
+2018/05/02 15:03:42.737030 radius.go:87: rh.wang 172.25.0.171 Login
+2018/05/02 15:03:52.093606 radius.go:91: rh.wang 172.25.0.171 Logout
+2018/05/02 15:05:31.830141 radius.go:65: rh.wang viproot 
+2018/05/02 15:05:31.831957 radius.go:77: rh.wang 172.18.200.14 auth success
+2018/05/02 15:05:31.964627 radius.go:87: rh.wang 172.18.200.14 Login
+2018/05/02 15:05:54.633148 radius.go:91: rh.wang 172.18.200.14 Logout
+2018/05/02 15:07:16.521927 radius.go:43: Stopping authentication server 
+2018/05/02 15:07:16.521996 radius.go:46: Stopping accounting server
+2018/05/02 15:23:58.743784 http.go:64: https listening :1811
+2018/05/02 15:23:58.744240 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/02 15:23:58.744009 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/02 15:25:07.233219 radius.go:75: rh.wang 172.18.200.14 auth success
+2018/05/02 15:25:07.456371 radius.go:85: rh.wang 172.18.200.14 Login
+2018/05/02 15:26:46.671544 radius.go:89: rh.wang 172.18.200.14 Logout
+2018/05/02 15:27:09.131416 radius.go:75: rh.wang 172.25.0.171 auth success
+2018/05/02 15:27:09.172478 radius.go:85: rh.wang 172.25.0.171 Login
+2018/05/02 15:27:10.247656 radius.go:89: rh.wang 172.25.0.171 Logout
+2018/05/02 15:30:28.034739 radius.go:43: Stopping authentication server 
+2018/05/02 15:30:28.034800 radius.go:46: Stopping accounting server
