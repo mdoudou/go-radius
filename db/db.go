@@ -6,8 +6,14 @@ import (
 	"github.com/hel2o/go-radius/g"
 	"log"
 	"strconv"
+	"strings"
 	"time"
 )
+
+type UserPrivilege struct {
+	UserName  string
+	Privilege int
+}
 
 var RadiusDb, FireSystemDb *sql.DB
 
@@ -152,6 +158,41 @@ func AuthFail(db *sql.DB, userName, password, nasIPAddress, nasIdentifier, frame
 	rowsAffected, err := ret.RowsAffected()
 	HandleErr(err)
 	return rowsAffected, err
+}
+
+//读取用户权限
+func ReadPrivilege(db *sql.DB, userName, ipAddress string) int {
+	defer func() {
+		if err := recover(); err != nil {
+			log.Println(err)
+		}
+	}()
+	var pri int
+	var privileges string
+	q := "SELECT privileges FROM swdb WHERE ipAddress = ?"
+	err := db.QueryRow(q, ipAddress).Scan(&privileges)
+	if err != nil {
+		log.Println(err)
+		return 0
+	}
+	for _, userPri := range decPrivilege(privileges) {
+		if userName == userPri.UserName {
+			pri = userPri.Privilege
+			break
+		}
+	}
+	return pri
+}
+
+func decPrivilege(privileges string) []UserPrivilege {
+	var userPrivilege []UserPrivilege
+	ups := strings.Split(privileges, "|")
+	for _, v := range ups {
+		up := strings.Split(v, "=")
+		p, _ := strconv.Atoi(up[1])
+		userPrivilege = append(userPrivilege, UserPrivilege{UserName: up[0], Privilege: p})
+	}
+	return userPrivilege
 }
 
 func HandleErr(err error) {

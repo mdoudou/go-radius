@@ -62,13 +62,20 @@ func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
 
 	switch request.Code {
 	case radius.AccessRequest:
-		if db.CheckUserPassword(db.RadiusDb, request.GetUsername(), request.GetPassword()) {
-			npac.Code = radius.AccessAccept
-			// add Vendor-specific attribute - Vendor Huawei (code 2011) Attribute Huawei-Exec-Privilege (code 29)
-			npac.AddVSA(radius.VSA{Vendor: 2011, Type: 29, Value: intToBytes(3)})
-			npac.AddAVP(radius.AVP{Type: radius.ServiceType, Value: intToBytes(1)})
-			npac.AddAVP(radius.AVP{Type: radius.LoginService, Value: intToBytes(0)})
-			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication success - by ISC Team")})
+		if db.CheckUserPassword(db.RadiusDb, userName, password) {
+			privilege := db.ReadPrivilege(db.FireSystemDb, userName, nasIPAddress)
+			if privilege == 0 {
+				npac.Code = radius.AccessReject
+				npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Permission denied - by ISC Team")})
+			} else {
+				npac.Code = radius.AccessAccept
+				// add Vendor-specific attribute - Vendor Huawei (code 2011) Attribute Huawei-Exec-Privilege (code 29)
+				npac.AddVSA(radius.VSA{Vendor: 2011, Type: 29, Value: intToBytes(privilege)})
+				npac.AddAVP(radius.AVP{Type: radius.ServiceType, Value: intToBytes(1)})
+				npac.AddAVP(radius.AVP{Type: radius.LoginService, Value: intToBytes(0)})
+				npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication success - by ISC Team")})
+			}
+
 			if acctSessionId != "" {
 				db.AuthSuccess(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
 			} else {
