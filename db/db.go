@@ -63,17 +63,17 @@ func CheckUserPassword(db *sql.DB, username, password string) bool {
 }
 
 //记录用户认证成功
-func AuthSuccess(db *sql.DB, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId string) (int64, error) {
+func AuthSuccess(db *sql.DB, userName, password, result, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId string) (int64, error) {
 	defer func() {
 		if err := recover(); err != nil {
 			log.Println(err)
 		}
 	}()
-	var w = "INSERT INTO `radpostauth` (username, pass, reply, authdate, nasipaddress, clientipaddress, nasidentifier, acctstarttime, acctsessionid) VALUES (?,?,'Access-Accept',now(),?,?,?,now(),?)"
+	var w = "INSERT INTO `radpostauth` (username, pass, reply, authdate, nasipaddress, clientipaddress, nasidentifier, acctstarttime, acctsessionid) VALUES (?,?,?,now(),?,?,?,now(),?)"
 	stmt, err := db.Prepare(w)
 	defer stmt.Close()
 	HandleErr(err)
-	ret, err := stmt.Exec(userName, password, nasIPAddress, framedIPAddress, nasIdentifier, acctSessionId)
+	ret, err := stmt.Exec(userName, password, result, nasIPAddress, framedIPAddress, nasIdentifier, acctSessionId)
 	if err != nil {
 		log.Println(err)
 		return 0, err

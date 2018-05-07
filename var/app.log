@@ -401,3 +401,24 @@
 2018/05/07 12:08:04.146156 radius.go:99: rh.wang 172.25.0.171 Logout
 2018/05/07 12:16:42.246848 radius.go:43: Stopping authentication server 
 2018/05/07 12:16:42.246973 radius.go:46: Stopping accounting server
+2018/05/07 14:03:05.158495 http.go:63: https listening :1811
+2018/05/07 14:03:05.158849 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/07 14:03:05.158936 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/07 14:03:05.907859 radius.go:43: Stopping authentication server 
+2018/05/07 14:03:05.907915 radius.go:46: Stopping accounting server
+2018/05/07 14:03:10.550916 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/07 14:03:10.551046 http.go:63: https listening :1811
+2018/05/07 14:03:10.551054 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/07 14:03:42.568908 radius.go:87: rh.wang 172.25.0.171 password correct
+2018/05/07 14:08:05.641782 radius.go:43: Stopping authentication server 
+2018/05/07 14:08:05.641873 radius.go:46: Stopping accounting server
+2018/05/07 14:08:07.386934 http.go:63: https listening :1811
+2018/05/07 14:08:07.387425 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/07 14:08:07.388108 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/07 14:10:46.407759 radius.go:43: Stopping authentication server 
+2018/05/07 14:10:46.407857 radius.go:46: Stopping accounting server
+2018/05/07 14:10:48.220461 http.go:63: https listening :1811
+2018/05/07 14:10:48.220879 radius.go:33: Listening UDP on 0.0.0.0 :1813
+2018/05/07 14:10:48.220771 radius.go:26: Listening UDP on 0.0.0.0 :1812
+2018/05/07 14:10:51.717774 radius.go:43: Stopping authentication server 
+2018/05/07 14:10:51.717867 radius.go:46: Stopping accounting server

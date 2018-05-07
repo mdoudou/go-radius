@@ -63,31 +63,34 @@ func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
 	switch request.Code {
 	case radius.AccessRequest:
 		if db.CheckUserPassword(db.RadiusDb, userName, password) {
+			var result string
 			privilege := db.ReadPrivilege(db.FireSystemDb, userName, nasIPAddress)
 			if privilege == 0 {
 				npac.Code = radius.AccessReject
+				result = "Denied"
 				npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Permission denied - by ISC Team")})
+				log.Println(userName, nasIPAddress, password, "Permission denied")
 			} else {
 				npac.Code = radius.AccessAccept
+				result = "Access-Accept"
 				// add Vendor-specific attribute - Vendor Huawei (code 2011) Attribute Huawei-Exec-Privilege (code 29)
 				npac.AddVSA(radius.VSA{Vendor: 2011, Type: 29, Value: intToBytes(privilege)})
 				npac.AddAVP(radius.AVP{Type: radius.ServiceType, Value: intToBytes(1)})
 				npac.AddAVP(radius.AVP{Type: radius.LoginService, Value: intToBytes(0)})
 				npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication success - by ISC Team")})
+				log.Println(userName, nasIPAddress, password, "Authentication success")
 			}
 
 			if acctSessionId != "" {
-				db.AuthSuccess(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
+				db.AuthSuccess(db.RadiusDb, userName, password, result, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
 			} else {
 				log.Println(nasIPAddress, "acctSessionId empty")
 			}
-			log.Println(userName, nasIPAddress, "auth success")
-
 		} else {
 			db.AuthFail(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
 			npac.Code = radius.AccessReject
 			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication failed - by ISC Team")})
-			log.Println(userName, nasIPAddress, password, "auth failed")
+			log.Println(userName, nasIPAddress, password, "Authentication failed")
 		}
 	case radius.AccountingRequest:
 		if request.GetAcctStatusType().String() == "Start" {
