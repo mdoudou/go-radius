@@ -14,6 +14,7 @@ type GoRadiusConfig struct {
 	AuthListen   string `json:"authListen"`
 	AcctListen   string `json:"acctListen"`
 	SharedKey    string `json:"sharedKey"`
+	CfgBackName  string `json:"cfgBackName"`
 }
 
 type HttpConfig struct {

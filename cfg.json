@@ -5,7 +5,8 @@
     "acctListen": ":1813",
     "sharedKey": "Clifford-Group",
     "radiusDb": "root:viproot@tcp(192.168.99.22:3306)/radius?charset=utf8",
-    "fireSystemDb": "root:viproot@tcp(192.168.99.22:3306)/swdashboard?charset=utf8"
+    "fireSystemDb": "root:viproot@tcp(192.168.99.22:3306)/swdashboard?charset=utf8",
+    "cfgBackName": "copyconfig"
   },
   "http": {
     "enabled": true,

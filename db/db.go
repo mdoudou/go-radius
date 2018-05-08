@@ -169,6 +169,9 @@ func ReadPrivilege(db *sql.DB, userName, ipAddress string) int {
 	}()
 	var pri int
 	var privileges string
+	if userName == g.Config().GoRadius.CfgBackName {
+		return 3
+	}
 	q := "SELECT privileges FROM swdb WHERE ipAddress = ?"
 	err := db.QueryRow(q, ipAddress).Scan(&privileges)
 	if err != nil {
