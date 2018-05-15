@@ -69,7 +69,7 @@ func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
 				npac.Code = radius.AccessReject
 				result = "Denied"
 				npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Permission denied - by ISC Team")})
-				log.Println(userName, nasIPAddress, password, "Permission denied")
+				log.Println(userName, nasIPAddress, "Permission denied")
 			} else {
 				npac.Code = radius.AccessAccept
 				result = "Access-Accept"
@@ -78,7 +78,7 @@ func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
 				npac.AddAVP(radius.AVP{Type: radius.ServiceType, Value: intToBytes(1)})
 				npac.AddAVP(radius.AVP{Type: radius.LoginService, Value: intToBytes(0)})
 				npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication success - by ISC Team")})
-				log.Println(userName, nasIPAddress, password, "Authentication success")
+				log.Println(userName, nasIPAddress, "Authentication success")
 			}
 
 			if acctSessionId != "" {
@@ -90,7 +90,7 @@ func (p radiusService) RadiusHandle(request *radius.Packet) *radius.Packet {
 			db.AuthFail(db.RadiusDb, userName, password, nasIPAddress, nasIdentifier, framedIPAddress, acctSessionId)
 			npac.Code = radius.AccessReject
 			npac.AddAVP(radius.AVP{Type: radius.ReplyMessage, Value: []byte("Authentication failed - by ISC Team")})
-			log.Println(userName, nasIPAddress, password, "Authentication failed")
+			log.Println(userName, nasIPAddress, "Authentication failed")
 		}
 	case radius.AccountingRequest:
 		if request.GetAcctStatusType().String() == "Start" {
