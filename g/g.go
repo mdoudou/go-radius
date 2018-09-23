@@ -5,7 +5,10 @@ import (
 	"fmt"
 	"os"
 	"runtime"
+	"time"
 )
+
+var StartTime int64
 
 func Init() {
 	runtime.GOMAXPROCS(runtime.NumCPU())
@@ -22,5 +25,5 @@ func Init() {
 	}
 
 	ParseConfig(*cfg)
-
+	StartTime = time.Now().Unix()
 }

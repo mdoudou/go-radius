@@ -3,8 +3,9 @@ package g
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/toolkits/file"
 	"sync"
+
+	"github.com/toolkits/file"
 )
 
 type GoRadiusConfig struct {
@@ -22,9 +23,16 @@ type HttpConfig struct {
 	Listen  string `json:"listen"`
 }
 
+type RpcConfig struct {
+	Enabled    bool   `json:"enabled"`
+	Listen     string `json:"listen"`
+	Management string `json:"management"`
+}
+
 type GlobalConfig struct {
 	GoRadius *GoRadiusConfig `json:"goRadius"`
 	Http     *HttpConfig     `json:"http"`
+	Rpc      *RpcConfig      `json:"rpc"`
 }
 
 var (

@@ -2,12 +2,13 @@ package db
 
 import (
 	"database/sql"
-	_ "github.com/go-sql-driver/mysql"
-	"github.com/hel2o/go-radius/g"
 	"log"
 	"strconv"
 	"strings"
 	"time"
+
+	_ "github.com/go-sql-driver/mysql"
+	"github.com/hel2o/go-radius/g"
 )
 
 type UserPrivilege struct {
@@ -23,6 +24,7 @@ func InitDB() {
 		log.Println(err)
 		return
 	}
+	radiusDb.SetConnMaxLifetime(time.Minute)
 	err = radiusDb.Ping()
 	if err != nil {
 		log.Println(err)
@@ -34,6 +36,7 @@ func InitDB() {
 		log.Println(err)
 		return
 	}
+	fireSystemDb.SetConnMaxLifetime(time.Minute)
 	err = fireSystemDb.Ping()
 	if err != nil {
 		log.Println(err)

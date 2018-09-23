@@ -8,6 +8,11 @@
     "fireSystemDb": "root:viproot@tcp(192.168.99.22:3306)/swdashboard?charset=utf8",
     "cfgBackName": "copyconfig"
   },
+  "rpc": {
+  "enabled": true,
+  "listen": ":7075",
+  "management":"192.168.99.26"
+},
   "http": {
     "enabled": true,
     "listen": ":1811"
